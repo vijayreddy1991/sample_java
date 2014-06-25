@@ -1,5 +1,4 @@
-sample_java_mysql
+Java Sample
 ================
 
-Sample Java project with MySQL using Maven.
-
+Sample Java app using Maven.
