@@ -9,6 +9,9 @@ jdk:
 after_success:
    - mvn clean cobertura:cobertura
    - mvn test
-notifications:
-  email: false
 
+notifications:
+   email:
+       recipients:
+          - exampleone@org.com
+          - exampletwo@org.com
