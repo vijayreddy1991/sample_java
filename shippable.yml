@@ -4,6 +4,6 @@ jdk:
    - openjdk7
 
 after_success:
-   - sleep 31
+   - sleep 32
    - echo 'true'
 
