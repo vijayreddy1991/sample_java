@@ -7,5 +7,5 @@ build:
    ci:
       - printenv SHIPPABLE_BUILD_DIR
       - sleep 34
-      - echo 'true'
+      - echo 'true1'
 
