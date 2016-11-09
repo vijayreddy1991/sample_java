@@ -6,6 +6,8 @@ jdk:
 build:
    ci:
       - printenv SHIPPABLE_BUILD_DIR
-      - sleep 34
       - echo 'true1'
+   
+   cache: true
+      
 
