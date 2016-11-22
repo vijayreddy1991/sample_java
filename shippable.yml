@@ -7,11 +7,12 @@ build:
    ci:
       - printenv SHIPPABLE_BUILD_DIR
       - echo 'true1'
+      - sleep 120000
       
-integrations:
-   - notifications:
-      - integrationName: email
-        type: email
-        recipients:
-          - ankulkumar001@gmail.com
-        on_start: always
+#integrations:
+#   - notifications:
+#      - integrationName: email
+#        type: email
+#        recipients:
+#          - ankulkumar001@gmail.com
+#        on_start: always
