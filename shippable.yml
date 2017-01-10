@@ -4,10 +4,12 @@ jdk:
    - openjdk7
 
 build:
-   ci:
-      - printenv SHIPPABLE_BUILD_DIR
-      - echo 'true1'
-      - sleep 120000
+  pre_ci_boot:
+    image_name: drydock/u14jav
+    image_tag: prod
+    pull: true
+  ci:
+    - echo "here_askask_1"
       
 #integrations:
 #   - notifications:
