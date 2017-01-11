@@ -10,7 +10,7 @@ build:
     pull: true
   ci:
     - echo "here_askask_1"
-    - sleep 100
+    - sleep 40
       
 #integrations:
 #   - notifications:
