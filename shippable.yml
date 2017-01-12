@@ -9,7 +9,7 @@ build:
     image_tag: prod
     pull: true
   ci:
-    - echo "here_askask_2"
+    - echo "here_askask_3"
     - sleep 40
       
 #integrations:
