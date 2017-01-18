@@ -34,3 +34,4 @@ integrations:
         - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
         - FOO=BAR
         - FIZZ=BUZZ
+        - versionName: $BRANCH:$BUILD_NUMBER
