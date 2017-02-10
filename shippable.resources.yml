@@ -6,3 +6,7 @@ resources:
       sourceName: "ankul/nginx"
     seed:
       versionName: prod.10
+
+  - name: ciRepo
+    type: ciRepo
+    integration: "github-subint"
