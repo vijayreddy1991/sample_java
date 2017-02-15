@@ -9,11 +9,11 @@ jobs:
     on_success:
       - script: echo "successfully completed"
 
-  - name: sample_java_runCI
-    type: runCI
-    steps:
-      - IN: runSh-Job-java
-      - OUT: nginx-image-java
+#  - name: sample_java_runCI
+#    type: runCI
+#    steps:
+#      - IN: runSh-Job-java
+#      - OUT: nginx-image-java
 
 #  - name: sample_node_runCI
 #    type: runCI
