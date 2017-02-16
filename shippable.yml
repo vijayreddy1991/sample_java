@@ -12,7 +12,7 @@ build:
     image_tag: prod
     pull: true
   ci:
-    - echo "here_10"
+    - echo "here_11"
 #    - here_askask_3
 #    - sleep 40
       
