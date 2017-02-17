@@ -15,7 +15,7 @@ jobs:
 #      - IN: runSh-Job-java
 #      - OUT: nginx-image-java
 
-#  - name: sample_node_runCI
-#    type: runCI
-#    steps:
-#      - IN: sample_pipelines_runCI
+  - name: sample_node_runCI
+    type: runCI
+    steps:
+      - IN: sample_pipelines_runCI
