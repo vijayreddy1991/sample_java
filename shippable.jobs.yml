@@ -20,7 +20,6 @@ jobs:
     type: runCI
     steps:
       - IN: sample_java_runCI
-        switch: off
 
   - name: sample_pipelines_runCI
     type: runCI
