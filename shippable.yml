@@ -13,19 +13,19 @@ build:
     pull: true
   ci:
     - echo "here_11"
-    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/nginx-image.env
+#    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/nginx-image.env
 #    - here_askask_3
 #    - sleep 40
       
-integrations:
-  notifications:
-    - integrationName: slack-subint
-      type: slack
-      recipients:
-        - "#test-5148"
-      on_start: always
-      on_success: always
-      on_failure: always
+#integrations:
+#  notifications:
+#    - integrationName: slack-subint
+#      type: slack
+#      recipients:
+#        - "#test-5148"
+#      on_start: always
+#      on_success: always
+#      on_failure: always
 
 
 
