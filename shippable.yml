@@ -17,8 +17,18 @@ build:
 #    - here_askask_3
 #    - sleep 40
       
-#integrations:
-#   - notifications:
+integrations:
+  notifications:
+    - integrationName: slack-subint
+      type: slack
+      recipients:
+        - "#test-5148"
+      on_start: always
+      on_success: always
+      on_failure: always
+
+
+
 #      - integrationName: email
 #        type: email
 #        recipients:
