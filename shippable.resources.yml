@@ -3,6 +3,25 @@ resources:
     type: image
     integration: "docker-subint"
     pointer:
-      sourceName: "library/nginx"
+      sourceName: "ankul/nginx"
     seed:
-      versionName: latest
+      versionName: prod.10
+
+  - name: sample_java-gitRepo
+    type: gitRepo
+    integration: "github-subint"
+    pointer:
+      sourceName: ankul-shippable/sample_java
+      branch: master
+
+  - name: params-trace
+    type: params
+    version:
+      params:
+        MONGO_API_URL: "localhost:28017"
+
+  - name: ddc-cluster-trace
+    type: cluster
+    integration: "ddc-subint"
+    pointer:
+      sourceName: "ddc-cluster"
