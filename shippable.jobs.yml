@@ -2,7 +2,7 @@ jobs:
   - name: runSh-Job-java
     type: runSh
     steps:
-      - IN: sample_java_runCI
+#      - IN: sample_java_runCI
       - TASK:
         - script: sudo apt-get install tree
         - script: tree -F IN
@@ -16,12 +16,12 @@ jobs:
 #      - IN: runSh-Job-java
 #      - OUT: nginx-image-java
 
-  - name: sample_node_runCI
-    type: runCI
-    steps:
-      - IN: sample_java_runCI
+#  - name: sample_node_runCI
+#    type: runCI
+#    steps:
+#      - IN: sample_java_runCI
 
-  - name: sample_pipelines_runCI
-    type: runCI
-    steps:
-      - IN: sample_java_runCI 
+#  - name: sample_pipelines_runCI
+#    type: runCI
+#    steps:
+#      - IN: sample_java_runCI 
