@@ -1,8 +1,8 @@
 resources:
-  - name: nginx-image-java
+  - name: nginx-image-trace
     type: image
     integration: "docker-subint"
     pointer:
-      sourceName: "ankul/nginx"
+      sourceName: "library/nginx"
     seed:
-      versionName: prod.10
+      versionName: latest
