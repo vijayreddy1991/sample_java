@@ -2,7 +2,6 @@ jobs:
   - name: runSh-Job-java
     type: runSh
     steps:
-      - IN: sample_java_runCI
       - TASK:
         - script: sudo apt-get install tree
         - script: tree -F IN
