@@ -1,11 +1,11 @@
 jobs:  
-  - name: nginx-manifest-trace-2
+  - name: nginx-manifest-trace
     type: manifest
     steps:
       - IN: nginx-image-trace
       - IN: trigger-4
 
-  - name: ddc-deploy-trace-2
+  - name: ddc-deploy-trace
     type: deploy
     steps:
       - IN: nginx-manifest-trace
@@ -24,8 +24,8 @@ jobs:
     on_success:
       - script: echo "successfully completed"
 
-#  - name: sample_java_runCI
-#    type: runCI
-#    steps:
-#      - IN: runSh-trace
-#      - OUT: nginx-image-trace
+  - name: sample_java_runCI
+    type: runCI
+    steps:
+      - IN: runSh-trace
+      - OUT: nginx-image-trace
