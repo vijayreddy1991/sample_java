@@ -1,5 +1,5 @@
 resources:
-  - name: nginx-image-trace
+  - name: nginx-image-java
     type: image
     integration: "docker-subint"
     pointer:
