@@ -1,16 +1,16 @@
 jobs:  
-  - name: nginx-manifest-trace_2
+  - name: nginx-manifest-trace_copy
     type: manifest
     steps:
-      - IN: nginx-image-trace_2
-      - IN: trigger-trace_2
+      - IN: nginx-image-trace_copy
+      - IN: trigger-trace_copy
 
-  - name: ddc-deploy-trace_2
+  - name: ddc-deploy-trace_copy
     type: deploy
     steps:
-      - IN: nginx-manifest-trace_2
-      - IN: ddc-cluster-trace_2
-      - IN: params-trace_2
+      - IN: nginx-manifest-trace_copy
+      - IN: ddc-cluster-trace_copy
+      - IN: params-trace_copy
       - TASK: managed
 
   - name: runSh-trace_copy
