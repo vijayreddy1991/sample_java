@@ -28,4 +28,4 @@ jobs:
     type: runCI
     steps:
       - IN: runSh-trace_copy
-      - OUT: nginx-image-trace
+      - OUT: nginx-image-trace_copy
