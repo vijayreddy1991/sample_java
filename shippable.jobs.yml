@@ -24,8 +24,8 @@ jobs:
     on_success:
       - script: echo "successfully completed"
 
-  - name: sample_java_runCI
-    type: runCI
-    steps:
-      - IN: runSh-trace
-      - OUT: nginx-image-trace
+#  - name: sample_java_runCI
+#    type: runCI
+#    steps:
+#      - IN: runSh-trace
+#      - OUT: nginx-image-trace
