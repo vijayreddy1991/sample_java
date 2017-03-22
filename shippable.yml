@@ -13,6 +13,8 @@ build:
     pull: true
   ci:
     - echo "here_11"
+    - echo $API_KEY
+    - echo $API_URL
 #    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/nginx-image.env
 #    - here_askask_3
 #    - sleep 40
