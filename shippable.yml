@@ -16,6 +16,7 @@ build:
     - echo $API_KEY
     - echo $API_URL
     - echo $WWW_KEY
+    - printenv
 #    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/nginx-image.env
 #    - here_askask_3
 #    - sleep 40
