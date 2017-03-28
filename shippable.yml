@@ -6,6 +6,10 @@ language: java
 #  - oraclejdk7
 #  - oraclejdk8
 
+env:
+  global:
+    - API_URL=https://localhost:3001
+
 build:
   pre_ci_boot:
     image_name: drydock/u14jav
