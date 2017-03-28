@@ -11,10 +11,10 @@ env:
     - API_URL=https://localhost:3001
 
 build:
-  #pre_ci_boot:
-   # image_name: drydock/u14jav
-   # image_tag: prod
-   # pull: true
+  pre_ci_boot:
+    image_name: drydock/u14jav
+    image_tag: prod
+    pull: true
   ci:
     - echo $API_KEY
     - echo $API_URL
