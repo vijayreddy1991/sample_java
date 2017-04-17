@@ -12,7 +12,7 @@ build:
     image_tag: prod
     pull: true
   ci:
-    - echo "here_11"
+    - echo "here_12"
     - echo $API_KEY
     - echo $API_URL
     - echo $WWW_KEY
