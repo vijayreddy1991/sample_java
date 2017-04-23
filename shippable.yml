@@ -12,15 +12,9 @@ build:
     image_tag: prod
     pull: true
   ci:
-    - echo "here_15_2"
-    - echo $API_KEY
-    - echo $API_URL
-    - echo $WWW_KEY
-    - printenv
-    - echo "4"
-#    - echo "versionName=$BRANCH.$BUILD_NUMBER" >> $JOB_STATE/nginx-image.env
-#    - here_askask_3
-#    - sleep 40
+    - echo $JOB_TRIGGERED_BY_NAME
+    - echo $JOB_TRIGGERED_BY_ID
+    - echo "ci edit number 1"
       
 #integrations:
 #  notifications:
