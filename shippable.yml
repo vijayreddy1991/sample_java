@@ -14,7 +14,7 @@ build:
   ci:
     - echo $JOB_TRIGGERED_BY_NAME
     - echo $JOB_TRIGGERED_BY_ID
-    - sleep 120
+    #- sleep 120
     - echo "ci_edit_number_5"
       
 #integrations:
