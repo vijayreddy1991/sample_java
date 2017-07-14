@@ -1,9 +1,9 @@
 language: java
 
 jdk:
-  - openjdk6
-  - openjdk7
-  - oraclejdk7
+#  - openjdk6
+#  - openjdk7
+#  - oraclejdk7
   - oraclejdk8
 
 build:
@@ -14,7 +14,7 @@ build:
   ci:
     - echo $JOB_TRIGGERED_BY_NAME
     - echo $JOB_TRIGGERED_BY_ID
-    - sleep 1
+    - sleep 60
     - echo "ci_edit_number_5"
       
 #integrations:
