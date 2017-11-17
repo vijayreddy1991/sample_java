@@ -15,6 +15,7 @@ build:
     - echo $JOB_TRIGGERED_BY_NAME
     - echo $JOB_TRIGGERED_BY_ID
     - echo "ci_edit_number_5"
+    - sleep 60
       
 #integrations:
 #  notifications:
