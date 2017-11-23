@@ -12,10 +12,9 @@ build:
     image_tag: prod
     pull: true
   ci:
-    - echo $JOB_TRIGGERED_BY_NAME
-    - echo $JOB_TRIGGERED_BY_ID
     - echo "ci_edit_number_5"
     - sleep 6
+    - printenv
       
 #integrations:
 #  notifications:
