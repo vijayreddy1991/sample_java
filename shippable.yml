@@ -13,7 +13,7 @@ build:
     pull: true
   ci:
     - echo "ci_edit_number_5"
-    - sleep 6
+    #- sleep 6
     - printenv
       
 #integrations:
