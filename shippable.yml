@@ -7,10 +7,10 @@ jdk:
   #- oraclejdk8
 
 build:
-  pre_ci_boot:
-    image_name: drydock/u14jav
-    image_tag: prod
-    pull: true
+  #pre_ci_boot:
+    #image_name: drydock/u14jav
+    #image_tag: prod
+    #pull: true
   ci:
     - echo "ci_edit_number_5"
     #- sleep 6
