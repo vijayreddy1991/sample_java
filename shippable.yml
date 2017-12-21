@@ -1,37 +1,24 @@
 language: java
 
-#jdk:
-#  - openjdk6
-#  - openjdk7
-#  - oraclejdk7
-#  - oraclejdk8
-
 build:
-  pre_ci_boot:
-    image_name: drydock/u14jav
-    image_tag: prod
-    pull: true
   ci:
     - echo "here_6"
-#    - here_askask_3
-#    - sleep 40
-      
-#integrations:
-#   - notifications:
-#      - integrationName: email
-#        type: email
-#        recipients:
-#          - ankulkumar001@gmail.com
-#        on_start: always
 
-#integrations:
-#  notifications:
-#    - integrationName: webhook-subint
-#      type: webhook
-#      payload:
-#        - isPRBuild=$IS_PULL_REQUEST
-#        - branchName=$BRANCH
-#        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-#        - FOO=BAR
-#        - FIZZ=BUZZ
-#        - versionName=$BRANCH:$BUILD_NUMBER
+jobs:
+  - name: runSh_0
+    type: runSh
+    steps:
+      - OUT: nginx_1 
+      - TASK:
+        - script: secs=1; SECONDS=0; while (( SECONDS < secs )); do sleep 1; echo $SECONDS; done
+        - script: shipctl post_resource_state nginx_1 versionName runSh_0_$BUILD_NUMBER
+
+
+resources:
+  - name: nginx_1
+    type: image
+    integration: "docker-subint"
+    pointer:
+      sourceName: "ankul/nginx"
+    seed:
+      versionName: prod.10
