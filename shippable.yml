@@ -22,6 +22,8 @@ build:
     - java -version    
     - nvm ls
     - echo "nvm ls done"
+    - sudo apt-get install tree
+    - tree
 
       
 #integrations:
