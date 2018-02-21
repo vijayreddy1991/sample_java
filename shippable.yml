@@ -4,18 +4,17 @@ jdk:
   - openjdk7
   - openjdk8 
   - openjdk9  
-  #- openjdk7
-  #- oraclejdk7
-  #- oraclejdk8
+  - oraclejdk8
+  - oraclejdk9
 
 build:
   pre_ci:
     - echo 'true'
-  pre_ci_boot:
-    image_name: ankul/u14javall
-    image_tag: master
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+  #pre_ci_boot:
+    #image_name: ankul/u14javall
+    #image_tag: master
+    #pull: false
+    #options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
     
   ci:
     - echo "lang c"
