@@ -84,7 +84,7 @@ jobs:
               imageName: "drydock/u16javall"
               imageTag: "master"
           script:
-            - shipctl jdk set oraclejdk8
+            - shipctl jdk set oraclejdk9
             - java -version
             - cd $SAMPLE_JAVA_STATE && javac MyClass.java
             - cd $SAMPLE_JAVA_STATE && java MyClass                     
