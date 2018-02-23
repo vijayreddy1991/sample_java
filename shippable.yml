@@ -26,33 +26,73 @@ build:
     - java MyClass
 
       
-#integrations:
-#  notifications:
-#    - integrationName: "slack-subint"
-#      type: slack
-#      recipients:
-#        - "#test-5148-2"
-#      on_start: always
-#      on_success: always
-#      on_failure: always
+jobs:
+  - name: java_u16javall_Test
+    type: runSh
+    allowPublicAccess: true
+    steps:
+      - IN: sample_java
+      - TASK:
+          name: version_openjdk7
+          runtime:
+            options:
+              imageName: "drydock/u16javall"
+              imageTag: "master"
+          script:
+            - update-alternatives --set java /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+            - java -version
+            - cd $SAMPLE_JAVA_STATE && javac MyClass.java
+            - cd $SAMPLE_JAVA_STATE && java MyClass
+      - TASK:
+          name: version_openjdk8
+          runtime:
+            options:
+              imageName: "drydock/u16javall"
+              imageTag: "master"
+          script:
+            - update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+            - java -version
+            - cd $SAMPLE_JAVA_STATE && javac MyClass.java
+            - cd $SAMPLE_JAVA_STATE && java MyClass    
+      - TASK:
+          name: version_openjdk9
+          runtime:
+            options:
+              imageName: "drydock/u16javall"
+              imageTag: "master"
+          script:
+            - update-alternatives --set java /usr/lib/jvm/java-9-openjdk-amd64/bin/java
+            - java -version
+            - cd $SAMPLE_JAVA_STATE && javac MyClass.java
+            - cd $SAMPLE_JAVA_STATE && java MyClass
+      - TASK:
+          name: version_oraclejdk8
+          runtime:
+            options:
+              imageName: "drydock/u16javall"
+              imageTag: "master"
+          script:
+            - update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java
+            - java -version
+            - cd $SAMPLE_JAVA_STATE && javac MyClass.java
+            - cd $SAMPLE_JAVA_STATE && java MyClass         
+      - TASK:
+          name: version_oraclejdk9
+          runtime:
+            options:
+              imageName: "drydock/u16javall"
+              imageTag: "master"
+          script:
+            - update-alternatives --set java  /usr/lib/jvm/java-9-oracle/bin/java 
+            - java -version
+            - cd $SAMPLE_JAVA_STATE && javac MyClass.java
+            - cd $SAMPLE_JAVA_STATE && java MyClass                     
 
-#  generic:
-#    - integrationName: "keyValuePair-subint"
-
-#      - integrationName: email
-#        type: email
-#        recipients:
-#          - ankulkumar001@gmail.com
-#        on_start: always
-
-#integrations:
-#  notifications:
-#    - integrationName: webhook-subint
-#      type: webhook
-#      payload:
-#        - isPRBuild=$IS_PULL_REQUEST
-#        - branchName=$BRANCH
-#        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-#        - FOO=BAR
-#        - FIZZ=BUZZ
-#        - versionName=$BRANCH:$BUILD_NUMBER
+resources:
+  - name: sample_java
+    type: gitRepo
+    integration: "github-subint"
+    versionTemplate:
+      sourceName: ankul-shippable/sample_java
+      branch: u16javall
+      
