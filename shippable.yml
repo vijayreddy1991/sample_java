@@ -39,9 +39,10 @@ jobs:
               imageName: "drydock/u16javall"
               imageTag: "master"
           script:
-            - update-alternatives --set java /usr/lib/jvm/java-7-openjdk-amd64/jre/bin/java
+            - shipctl jdk set openjdk7
             - java -version
             - cd $SAMPLE_JAVA_STATE && javac MyClass.java
+            - cd $SAMPLE_JAVA_STATE && ls            
             - cd $SAMPLE_JAVA_STATE && java MyClass
       - TASK:
           name: version_openjdk8
@@ -50,7 +51,7 @@ jobs:
               imageName: "drydock/u16javall"
               imageTag: "master"
           script:
-            - update-alternatives --set java /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+            - shipctl jdk set openjdk8
             - java -version
             - cd $SAMPLE_JAVA_STATE && javac MyClass.java
             - cd $SAMPLE_JAVA_STATE && java MyClass    
@@ -61,7 +62,7 @@ jobs:
               imageName: "drydock/u16javall"
               imageTag: "master"
           script:
-            - update-alternatives --set java /usr/lib/jvm/java-9-openjdk-amd64/bin/java
+            - shipctl jdk set openjdk9
             - java -version
             - cd $SAMPLE_JAVA_STATE && javac MyClass.java
             - cd $SAMPLE_JAVA_STATE && java MyClass
@@ -72,7 +73,7 @@ jobs:
               imageName: "drydock/u16javall"
               imageTag: "master"
           script:
-            - update-alternatives --set java /usr/lib/jvm/java-8-oracle/jre/bin/java
+            - shipctl jdk set oraclejdk8
             - java -version
             - cd $SAMPLE_JAVA_STATE && javac MyClass.java
             - cd $SAMPLE_JAVA_STATE && java MyClass         
@@ -83,7 +84,7 @@ jobs:
               imageName: "drydock/u16javall"
               imageTag: "master"
           script:
-            - update-alternatives --set java  /usr/lib/jvm/java-9-oracle/bin/java 
+            - shipctl jdk set oraclejdk8
             - java -version
             - cd $SAMPLE_JAVA_STATE && javac MyClass.java
             - cd $SAMPLE_JAVA_STATE && java MyClass                     
