@@ -1,9 +1,9 @@
 language: java
 
 jdk:
-  - openjdk7
-  - openjdk8 
-  - openjdk9  
+  #- openjdk7
+  #- openjdk8 
+  #- openjdk9  
   - oraclejdk8
   - oraclejdk9
 
@@ -36,8 +36,8 @@ build:
 #      on_success: always
 #      on_failure: always
 
-#  generic:
-#    - integrationName: "keyValuePair-subint"
+  generic:
+    - integrationName: "kv-subint"
 
 #      - integrationName: email
 #        type: email
