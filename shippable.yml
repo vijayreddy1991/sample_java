@@ -5,7 +5,9 @@ jdk:
   #- openjdk8 
   #- openjdk9  
   - oraclejdk8
-  - oraclejdk9
+
+env:
+  - secure: mNbdaAkBhh/qWowbaMJVE9Qkgb0A1Y03GyInvxmhx9/UF3aHkpmozS0GWF6QKmTXhmwgEuQAb58A4d+Uodt/IDuFoCCcaqZX6N2S1oBZUDfATXxquaGEvQizSthF0vgUSwaqmpFPxu3Ng/y0HWA1Q5oZuCLK8MUCcPL+SzsMc4aqSf29VyC1pupigwoeYxqijiFF8esJp7yl9s06itnHPAtW7Ha8UTgFerYdekmg6rQ1oqPUQKsqLtErNJXKI/+eFt5j/KxZH9LNH8nwF1iNoKzZy102fDl8WmTzFhsJlfGD34cJfvPg5lGJ85NER32zEXlCECCnTVYxckjjs7mOgg==
 
 build:
   pre_ci:
