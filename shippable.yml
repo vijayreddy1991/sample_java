@@ -41,7 +41,9 @@ integrations:
 
   generic:
     - integrationName: "kv-subint"
-    - integrationName: "docker-subint"
+  hub:
+    - integrationName: "docker-subint"   ##replace with your integration name
+      type: dockerRegistryLogin
 
 #      - integrationName: email
 #        type: email
