@@ -22,7 +22,10 @@ build:
     - java -version    
     - javac MyClass.java
     - java MyClass
-    - printenv
+    - echo $ENV_ONE
+    - echo $ENV_TWO
+    - echo $ENV_THREE
+    - echo $ENV_FOUR  
 
       
 integrations:
