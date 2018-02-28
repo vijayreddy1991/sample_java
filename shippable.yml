@@ -19,11 +19,7 @@ build:
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
     
   ci:
-    - echo "lang c"
-    - printenv
     - java -version    
-    - nvm ls
-    - echo "nvm ls done"
     - javac MyClass.java
     - java MyClass
     - printenv
