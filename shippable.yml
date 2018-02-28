@@ -27,7 +27,7 @@ build:
     - printenv
 
       
-#integrations:
+integrations:
 #  notifications:
 #    - integrationName: "slack-subint"
 #      type: slack
