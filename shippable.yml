@@ -24,6 +24,7 @@ build:
     - echo "nvm ls done"
     - javac MyClass.java
     - java MyClass
+    - printenv
 
       
 #integrations:
