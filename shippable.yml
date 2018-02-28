@@ -14,7 +14,7 @@ build:
     - echo 'true'
   pre_ci_boot:
     image_name: drydock/u14javall
-    image_tag: master
+    image_tag: prod
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
     
