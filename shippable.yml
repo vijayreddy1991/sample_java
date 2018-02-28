@@ -41,6 +41,7 @@ integrations:
 
   generic:
     - integrationName: "kv-subint"
+    - integrationName: "docker-subint"
 
 #      - integrationName: email
 #        type: email
