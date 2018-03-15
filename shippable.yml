@@ -6,26 +6,17 @@ jdk:
   #- openjdk9  
   - oraclejdk8
 
-env:
-  - secure: mNbdaAkBhh/qWowbaMJVE9Qkgb0A1Y03GyInvxmhx9/UF3aHkpmozS0GWF6QKmTXhmwgEuQAb58A4d+Uodt/IDuFoCCcaqZX6N2S1oBZUDfATXxquaGEvQizSthF0vgUSwaqmpFPxu3Ng/y0HWA1Q5oZuCLK8MUCcPL+SzsMc4aqSf29VyC1pupigwoeYxqijiFF8esJp7yl9s06itnHPAtW7Ha8UTgFerYdekmg6rQ1oqPUQKsqLtErNJXKI/+eFt5j/KxZH9LNH8nwF1iNoKzZy102fDl8WmTzFhsJlfGD34cJfvPg5lGJ85NER32zEXlCECCnTVYxckjjs7mOgg==
 
 build:
   pre_ci:
     - echo 'true'
-  pre_ci_boot:
-    image_name: drydock/u14javall
-    image_tag: prod
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
     
   ci:
     - java -version    
-    - javac MyClass.java
-    - java MyClass
-    - echo $ENV_ONE
-    - echo $ENV_TWO
-    - echo $ENV_THREE
-    - echo $ENV_FOUR  
+    - secs=6; SECONDS=0; while (( SECONDS < secs )); do sleep 1; echo $SECONDS; done
+    - sudo apt-get install tree
+    - tree 
+    - cat IN/externalCI-1c/version.json    
 
       
 integrations:
