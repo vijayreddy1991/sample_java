@@ -13,13 +13,13 @@ build:
     
   ci:
     - java -version    
-    - secs=6; SECONDS=0; while (( SECONDS < secs )); do sleep 1; echo $SECONDS; done
-    - sudo apt-get install tree
-    - tree /build
-    - cat /build/IN/externalCI-1c/version.json    
+    #- secs=6; SECONDS=0; while (( SECONDS < secs )); do sleep 1; echo $SECONDS; done
+    #- sudo apt-get install tree
+    #- tree /build
+    #- cat /build/IN/externalCI-1c/version.json    
 
       
-integrations:
+#integrations:
 #  notifications:
 #    - integrationName: "slack-subint"
 #      type: slack
@@ -29,11 +29,11 @@ integrations:
 #      on_success: always
 #      on_failure: always
 
-  generic:
-    - integrationName: "kv-subint"
-  hub:
-    - integrationName: "docker2-subint"   ##replace with your integration name
-      type: dockerRegistryLogin
+#  generic:
+#    - integrationName: "kv-subint"
+#  hub:
+#    - integrationName: "docker2-subint"   ##replace with your integration name
+#      type: dockerRegistryLogin
 
 #      - integrationName: email
 #        type: email
