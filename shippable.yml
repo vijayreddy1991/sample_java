@@ -1,51 +1,8 @@
-language: java
+language: node_js
 
-jdk:
-  #- openjdk7
-  #- openjdk8 
-  #- openjdk9  
-  - oraclejdk8
-
+node_js:
+  - 4.8.7
 
 build:
-  pre_ci:
-    - echo 'true2'
-    
   ci:
-    - if [ "$(($BUILD_NUMBER % 2))" -eq 0 ]; then failing it; fi # fail if build number is even
     - printenv
-
-      
-#integrations:
-#  notifications:
-#    - integrationName: "slack-subint"
-#      type: slack
-#      recipients:
-#        - "#test-5148-2"
-#      on_start: always
-#      on_success: always
-#      on_failure: always
-
-#  generic:
-#    - integrationName: "kv-subint"
-#  hub:
-#    - integrationName: "docker2-subint"   ##replace with your integration name
-#      type: dockerRegistryLogin
-
-#      - integrationName: email
-#        type: email
-#        recipients:
-#          - ankulkumar001@gmail.com
-#        on_start: always
-
-#integrations:
-#  notifications:
-#    - integrationName: webhook-subint
-#      type: webhook
-#      payload:
-#        - isPRBuild=$IS_PULL_REQUEST
-#        - branchName=$BRANCH
-#        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-#        - FOO=BAR
-#        - FIZZ=BUZZ
-#        - versionName=$BRANCH:$BUILD_NUMBER
