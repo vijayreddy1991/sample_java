@@ -1,51 +1,30 @@
-language: java
-
-jdk:
-  #- openjdk7
-  #- openjdk8 
-  #- openjdk9  
-  - oraclejdk8
-
-
-build:
-  pre_ci:
-    - echo 'true2'
-    
-  ci:
-    - if [ "$(($BUILD_NUMBER % 2))" -eq 0 ]; then failing it; fi # fail if build number is even
-    - printenv
-
-      
-#integrations:
-#  notifications:
-#    - integrationName: "slack-subint"
-#      type: slack
-#      recipients:
-#        - "#test-5148-2"
-#      on_start: always
-#      on_success: always
-#      on_failure: always
-
-#  generic:
-#    - integrationName: "kv-subint"
-#  hub:
-#    - integrationName: "docker2-subint"   ##replace with your integration name
-#      type: dockerRegistryLogin
-
-#      - integrationName: email
-#        type: email
-#        recipients:
-#          - ankulkumar001@gmail.com
-#        on_start: always
-
-#integrations:
-#  notifications:
-#    - integrationName: webhook-subint
-#      type: webhook
-#      payload:
-#        - isPRBuild=$IS_PULL_REQUEST
-#        - branchName=$BRANCH
-#        - message=Shippable Run $BUILD_NUMBER ($BUILD_URL) succeeded for $COMPARE_URL
-#        - FOO=BAR
-#        - FIZZ=BUZZ
-#        - versionName=$BRANCH:$BUILD_NUMBER
+resources:
+   - name: sample_java_repo_test
+     type: gitRepo
+     integrationName: github-subint
+     repoPath: ankul-shippable/sample_java
+     configuration:
+        branches:
+           except: "*test"
+           only: "master*"
+        tags:
+           except: none
+           only: none   
+        buildOnCommit: true
+        buildOnPullRequest: false
+        buildOnPullRequestClose: false
+        buildOnRelease: true
+        buildOnTagPush: false
+        buildOnFileCommit: "*test"
+        shallowDepth: 2
+        gitConfig: 
+          - dont_know
+          - dont_know_2
+     initialVersion:
+       sha: master
+       
+ pipelines:
+   - name: test_pipeline_1
+     steps:
+       - key: one
+       - key: two
