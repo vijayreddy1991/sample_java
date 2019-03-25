@@ -26,5 +26,43 @@ resources:
 pipelines:
   - name: test_pipeline_1
     steps:
-      - key: one
-      - key: two
+      - name: main_step
+        type: runSh
+        group: test_group 
+        syntaxVersion: 2018-03-12
+        priority: 9999
+        timeoutMinutes: 40
+        cache: true
+        setup:
+          environmentVariables:
+            normal:
+              - ENV1: value1
+              - ENV2: value2
+            encrypted:
+              - SECURE_ENV1: test_value
+              - SECURE_ENV2: test_value
+          runtime: onHost
+        dependsOn:
+          passive:
+            # steps:
+            #   - passive_step
+            integrations:
+              - github-subint
+          trigger:
+            resources:
+              - sample_node
+            # steps:
+            #   - active_step
+        onStart:
+          - echo "Prepping build environment"
+        onExecute:
+          - echo "executing task command 1"
+          - echo "executing task command 2"
+        onSuccess:
+          - echo "Job well done!"
+        onFailure:
+          - echo "uh oh, something went wrong"
+        onComplete:
+          - echo "Cleaning up some stuff"
+        onCancel:
+          - echo "Someone cancelled the job"
