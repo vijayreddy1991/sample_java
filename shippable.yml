@@ -29,7 +29,7 @@ pipelines:
       - name: main_step
         type: runSh
         group: test_group 
-        syntaxVersion: 2018-03-12
+        syntaxVersion: "2018-03-12"
         priority: 9999
         timeoutMinutes: 40
         cache: true
