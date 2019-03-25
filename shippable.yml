@@ -23,8 +23,8 @@ resources:
      initialVersion:
        sha: master
        
- pipelines:
-   - name: test_pipeline_1
-     steps:
-       - key: one
-       - key: two
+pipelines:
+  - name: test_pipeline_1
+    steps:
+      - key: one
+      - key: two
