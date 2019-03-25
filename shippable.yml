@@ -50,7 +50,7 @@ pipelines:
               - github-subint
           trigger:
             resources:
-              - sample_node
+              - sample_java_repo_test
             # steps:
             #   - active_step
         onStart:
