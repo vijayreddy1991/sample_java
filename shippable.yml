@@ -26,6 +26,22 @@ resources:
 pipelines:
   - name: test_pipeline_1
     steps:
+      - name: in_trigger_step
+        type: runSh
+        group: test_group
+        setup:
+          environmentVariables:
+            normal:
+              - ENV1: value1
+              - ENV2: value2
+            encrypted:
+              - SECURE_ENV1: test_value
+              - SECURE_ENV2: test_value
+          runtime: onHost
+        onExecute:
+          - echo "executing task command 1"
+          - echo "executing task command 2"
+
       - name: main_step
         type: runSh
         group: test_group 
@@ -51,8 +67,8 @@ pipelines:
           trigger:
             resources:
               - sample_java_repo_test
-            # steps:
-            #   - active_step
+            steps:
+              - in_trigger_step
         onStart:
           - echo "Prepping build environment"
         onExecute:
