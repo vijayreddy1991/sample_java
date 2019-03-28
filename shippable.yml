@@ -76,9 +76,10 @@ pipelines:
               - SECURE_ENV1: test_value
               - SECURE_ENV2: test_value
           runtime: onHost
-        onExecute:
-          - echo "executing task command 1"
-          - echo "executing task command 2"
+        execution:
+          onExecute:
+            - echo "executing task command 1"
+            - echo "executing task command 2"
 
       - name: main_step
         type: runSh
