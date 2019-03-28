@@ -37,7 +37,8 @@ pipelines:
     steps:
       - name: in_trigger_step
         type: runSh
-        group: test_group
+        configuration:
+          affinityGroup: test_group 
         setup:
           environmentVariables:
             normal:
