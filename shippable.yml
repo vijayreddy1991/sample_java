@@ -2,7 +2,7 @@ resources:
    - name: sample_java_repo_test
      type: gitRepo
      integrationName: github-subint
-     repoPath: ankul-shippable/sample_java
+     repoPath: deepikasl/sample_java
      configuration:
         branches:
            except: "*test"
