@@ -68,17 +68,20 @@ pipelines:
               - SECURE_ENV1: test_value
               - SECURE_ENV2: test_value
           runtime: onHost
-        dependsOn:
-          passive:
-            # steps:
-            #   - passive_step
-            integrations:
-              - github-subint
-          trigger:
-            resources:
-              - sample_java_repo_test
-            steps:
-              - in_trigger_step
+        requires:
+          #resources:
+           # - someStateResource
+            #- someVersionResource
+          #steps:
+           # - nightlyJob
+            #- cronJob
+          integrations:
+            - github-subint
+        triggeredBy:
+          resources:
+            - sample_java_repo_test
+          steps:
+            - in_trigger_step
         onStart:
           - echo "Prepping build environment"
         onExecute:
