@@ -1,9 +1,9 @@
 resources:
    - name: sample_java_repo_test
      type: gitRepo
-     integrationName: github-subint
      repoPath: deepikasl/sample_java
      configuration:
+        integrationName: github-subint
         branches:
            except: "*test"
            only: "master*"
@@ -22,6 +22,34 @@ resources:
           - dont_know_2
      initialVersion:
        sha: master
+   - name: sample_java_file_test
+     type: file
+     fileUrl: text.js
+     configuration:
+        integrationName: docker-int
+     initialVersion:
+       fileName: test
+       fileDtTm: test
+   - name: sample_java_image_test
+     type: image
+     imageName: "library/nginx"
+     configuration:
+       integrationName: docker-int
+     initialVersion:
+       imageTag: latest
+   - name: sample_java_webhook_test
+     type: webhook
+     configuration:
+       integrationName: github-subint
+     initialVersion:
+       payload: <string>
+   - name: sample_java_kube_test
+     type: cluster
+     configuration:
+       integrationName: kubeIntegration
+       bastionHostIP: 1.2.3.4
+       bastionUser: sshUser
+       bastionIntegrationName: sshKey-int
        
 pipelines:
   - name: test_pipeline_1
@@ -82,16 +110,20 @@ pipelines:
             - sample_java_repo_test
           steps:
             - in_trigger_step
-        onStart:
-          - echo "Prepping build environment"
-        onExecute:
-          - echo "executing task command 1"
-          - echo "executing task command 2"
-        onSuccess:
-          - echo "Job well done!"
-        onFailure:
-          - echo "uh oh, something went wrong"
-        onComplete:
-          - echo "Cleaning up some stuff"
-        onCancel:
-          - echo "Someone cancelled the job"
+        execution:
+          onStart:
+            - echo "Prepping build environment"
+          onExecute:
+            - echo "executing task command 1"
+            - echo "executing task command 2"
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete: #always
+            - echo "Cleaning up some stuff"
+          onCancel:
+            - echo "Someone cancelled the job"
+        outputResources:
+          - sample_java_file_test
+          - sample_java_webhook_test
