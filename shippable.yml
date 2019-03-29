@@ -42,7 +42,7 @@ resources:
      configuration:
        integrationName: github-subint
      initialVersion:
-       payload: <string>
+       payload: test_payload
    - name: sample_java_kube_test
      type: cluster
      configuration:
@@ -98,12 +98,6 @@ pipelines:
               - SECURE_ENV2: test_value
           runtime: onHost
         requires:
-          #resources:
-           # - someStateResource
-            #- someVersionResource
-          #steps:
-           # - nightlyJob
-            #- cronJob
           integrations:
             - github-subint
         triggeredBy:
@@ -145,12 +139,6 @@ pipelines:
               - SECURE_ENV2: test_value1
           runtime: onHost
         requires:
-          #resources:
-           # - someStateResource
-            #- someVersionResource
-          #steps:
-           # - nightlyJob
-            #- cronJob
           integrations:
             - github-subint
         triggeredBy:
