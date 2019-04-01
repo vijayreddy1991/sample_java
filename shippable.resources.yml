@@ -1,8 +1,0 @@
-resources:
-  - name: nginx-image-java
-    type: image
-    integration: "docker-subint"
-    pointer:
-      sourceName: "library/nginx"
-    seed:
-      versionName: latest
