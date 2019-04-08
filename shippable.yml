@@ -1,7 +1,7 @@
 resources:
    - name: sample_java_file_test
      type: file
-     fileUrl: text.js
+     fileLocation: https://random_url/text.js
      configuration:
         integrationName: docker-int
      initialVersion:
